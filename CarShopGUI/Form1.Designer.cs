@@ -148,7 +148,7 @@
             // 
             this.btn_addtocart.Location = new System.Drawing.Point(491, 212);
             this.btn_addtocart.Name = "btn_addtocart";
-            this.btn_addtocart.Size = new System.Drawing.Size(96, 23);
+            this.btn_addtocart.Size = new System.Drawing.Size(96, 41);
             this.btn_addtocart.TabIndex = 2;
             this.btn_addtocart.Text = "Add to cart -->";
             this.btn_addtocart.UseVisualStyleBackColor = true;

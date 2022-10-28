@@ -42,6 +42,16 @@ namespace CarShopGUI
 
         private void btn_addtocart_Click(object sender, EventArgs e)
         {
+            // Get the selected item from the inventory
+            // ALthought cars are stored in the list, we need to explicitly use a cast to tell it will be a car.
+            // Else, if a Cast was used incorrectly and used a truck or a different object it would crash the program.
+            Car selectedCar = (Car)lst_inventory.SelectedItem;
+
+            // Add that item to the cart
+            myStore.ShoppingList.Add(selectedCar);
+
+            // Update the list box control.
+            cartBindingSource.ResetBindings(false);
 
         }
 
@@ -59,9 +69,14 @@ namespace CarShopGUI
         {
             // BindingSource variable
             carInventoryBindingSource.DataSource = myStore.CarList;
+            cartBindingSource.DataSource = myStore.ShoppingList;
+
             // will be binded to:
             lst_inventory.DataSource = carInventoryBindingSource;
             lst_inventory.DisplayMember = ToString();
+
+            lst_cart.DataSource = cartBindingSource;
+            lst_cart.DisplayMember = ToString();
         }
     }
 }
