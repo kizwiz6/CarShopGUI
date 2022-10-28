@@ -138,10 +138,11 @@
             // 
             this.lst_inventory.FormattingEnabled = true;
             this.lst_inventory.ItemHeight = 15;
-            this.lst_inventory.Location = new System.Drawing.Point(-10, 31);
+            this.lst_inventory.Location = new System.Drawing.Point(0, 31);
             this.lst_inventory.Name = "lst_inventory";
-            this.lst_inventory.Size = new System.Drawing.Size(203, 379);
+            this.lst_inventory.Size = new System.Drawing.Size(193, 379);
             this.lst_inventory.TabIndex = 0;
+            this.lst_inventory.SelectedIndexChanged += new System.EventHandler(this.lst_inventory_SelectedIndexChanged);
             // 
             // btn_addtocart
             // 
