@@ -4,6 +4,15 @@ namespace CarShopGUI
 {
     public partial class Form1 : Form
     {
+        // Global variables for the form:
+        Store myStore = new Store(); // creates an object called myStore
+
+        // Binding sources are objects that associate the classes (like store) to the control.
+        BindingSource carInventoryBindingSource = new BindingSource();
+        BindingSource cartBindingSource = new BindingSource();
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -16,8 +25,19 @@ namespace CarShopGUI
 
         private void btn_create_car_Click(object sender, EventArgs e)
         {
+            // Create a new car:
             Car c = new Car(txt_make.Text, txt_model.Text, decimal.Parse(txt_price.Text));
-            MessageBox.Show(c.ToString());
+
+            // Display the details of the new car to the screen (temporarily)
+            // MessageBox.Show(c.ToString());
+
+            myStore.CarList.Add(c);
+
+            // Display car list to the list inventory box.
+            // Tells the binding source that the car has been added.
+            // Set to false as we're not modifying the structure just saying it's a new item
+            carInventoryBindingSource.ResetBindings(false);
+
         }
 
         private void btn_addtocart_Click(object sender, EventArgs e)
@@ -33,6 +53,15 @@ namespace CarShopGUI
         private void lst_inventory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // BindingSource variable
+            carInventoryBindingSource.DataSource = myStore.CarList;
+            // will be binded to:
+            lst_inventory.DataSource = carInventoryBindingSource;
+            lst_inventory.DisplayMember = ToString();
         }
     }
 }
