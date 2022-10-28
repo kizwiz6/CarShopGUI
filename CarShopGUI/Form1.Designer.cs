@@ -81,6 +81,7 @@
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(100, 23);
             this.txt_price.TabIndex = 5;
+            this.txt_price.TextChanged += new System.EventHandler(this.txt_price_TextChanged);
             // 
             // txt_model
             // 
@@ -127,9 +128,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lst_inventory);
-            this.groupBox2.Location = new System.Drawing.Point(268, 19);
+            this.groupBox2.Location = new System.Drawing.Point(225, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 408);
+            this.groupBox2.Size = new System.Drawing.Size(260, 408);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Car Inventory:";
@@ -140,7 +141,7 @@
             this.lst_inventory.ItemHeight = 15;
             this.lst_inventory.Location = new System.Drawing.Point(0, 31);
             this.lst_inventory.Name = "lst_inventory";
-            this.lst_inventory.Size = new System.Drawing.Size(193, 379);
+            this.lst_inventory.Size = new System.Drawing.Size(254, 379);
             this.lst_inventory.TabIndex = 0;
             this.lst_inventory.SelectedIndexChanged += new System.EventHandler(this.lst_inventory_SelectedIndexChanged);
             // 
