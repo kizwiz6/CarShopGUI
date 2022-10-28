@@ -11,5 +11,20 @@ namespace CarShopGUI
         {
 
         }
+
+        private void btn_create_car_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("create car");
+        }
+
+        private void btn_addtocart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_checkout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
