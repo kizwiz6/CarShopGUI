@@ -57,7 +57,11 @@ namespace CarShopGUI
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
+            decimal total = myStore.Checkout(); // checkout method returns ad decimal value.
+            lbl_total.Text = "$" + total.ToString(); // update via the Text value. Converts decimal to string.
 
+            // clears the cart when the button is pressed
+            cartBindingSource.ResetBindings(false);
         }
 
         private void lst_inventory_SelectedIndexChanged(object sender, EventArgs e)
