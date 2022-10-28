@@ -1,3 +1,5 @@
+using CarClassLibrary;
+
 namespace CarShopGUI
 {
     public partial class Form1 : Form
@@ -14,7 +16,7 @@ namespace CarShopGUI
 
         private void btn_create_car_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("create car");
+            Car c = new Car();
         }
 
         private void btn_addtocart_Click(object sender, EventArgs e)
